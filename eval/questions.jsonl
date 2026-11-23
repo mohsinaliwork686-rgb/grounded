@@ -1,0 +1,47 @@
+{"id": "q01", "question": "How long do I have to return something?", "answerable": true, "source": "returns.md", "evidence": "within 30 days of purchase"}
+{"id": "q02", "question": "How long does a refund take to reach my card?", "answerable": true, "source": "returns.md", "evidence": "within 5 working days"}
+{"id": "q03", "question": "Can I return something I bought in a sale?", "answerable": true, "source": "returns.md", "evidence": "within 14 days instead of 30"}
+{"id": "q04", "question": "Do I get my money back for a sale item?", "answerable": true, "source": "returns.md", "evidence": "refunded as store credit"}
+{"id": "q05", "question": "Can I return a bike I've ridden 30 km?", "answerable": true, "source": "returns.md", "evidence": "ridden less than 50 km"}
+{"id": "q06", "question": "Can I return a helmet I've worn?", "answerable": true, "source": "returns.md", "evidence": "Helmets that have been worn"}
+{"id": "q07", "question": "Can I return a wheel that was built to order for me?", "answerable": true, "source": "returns.md", "evidence": "wheels built to order"}
+{"id": "q08", "question": "Do you deliver to the Scottish Highlands?", "answerable": true, "source": "shipping.md", "evidence": "Scottish Highlands"}
+{"id": "q09", "question": "How much is standard delivery?", "answerable": true, "source": "shipping.md", "evidence": "costs £4.95"}
+{"id": "q10", "question": "When is delivery free?", "answerable": true, "source": "shipping.md", "evidence": "free on orders over £50"}
+{"id": "q11", "question": "What time do I have to order by for next-day delivery?", "answerable": true, "source": "shipping.md", "evidence": "order by 2pm"}
+{"id": "q12", "question": "How assembled is a bike when it arrives?", "answerable": true, "source": "shipping.md", "evidence": "90% assembled"}
+{"id": "q13", "question": "How long do you keep a click and collect order?", "answerable": true, "source": "shipping.md", "evidence": "hold orders for 14 days"}
+{"id": "q14", "question": "How much is a basic service?", "answerable": true, "source": "repairs.md", "evidence": "basic service costs £45"}
+{"id": "q15", "question": "What does a full service include?", "answerable": true, "source": "repairs.md", "evidence": "stripped down"}
+{"id": "q16", "question": "How long does a puncture repair take?", "answerable": true, "source": "repairs.md", "evidence": "within 20 minutes"}
+{"id": "q17", "question": "How long will a service take in April?", "answerable": true, "source": "repairs.md", "evidence": "up to 7 working days"}
+{"id": "q18", "question": "Do you repair e-bike motors?", "answerable": true, "source": "repairs.md", "evidence": "don't repair e-bike motors"}
+{"id": "q19", "question": "What are your opening hours on Sunday?", "answerable": true, "source": "store.md", "evidence": "10am to 4pm"}
+{"id": "q20", "question": "Is there parking at the shop?", "answerable": true, "source": "store.md", "evidence": "free parking spaces"}
+{"id": "q21", "question": "What do I need to bring for a test ride?", "answerable": true, "source": "store.md", "evidence": "photo ID"}
+{"id": "q22", "question": "Does the membership discount apply to bikes?", "answerable": true, "source": "membership.md", "evidence": "doesn't apply to bikes"}
+{"id": "q23", "question": "Can I get a refund if I cancel my membership?", "answerable": true, "source": "membership.md", "evidence": "within 14 days of joining"}
+{"id": "q24", "question": "How long is the frame warranty?", "answerable": true, "source": "warranty.pdf", "evidence": "covered for 2 years"}
+{"id": "q25", "question": "How long are carbon frames covered for?", "answerable": true, "source": "warranty.pdf", "evidence": "Carbon frames are covered for 5 years"}
+{"id": "q26", "question": "How long is the warranty on parts like gears and brakes?", "answerable": true, "source": "warranty.pdf", "evidence": "covered for 90 days"}
+{"id": "q27", "question": "What happens if my e-bike battery stops holding its charge?", "answerable": true, "source": "warranty.pdf", "evidence": "less than 70%"}
+{"id": "q28", "question": "Are tyres covered by the warranty?", "answerable": true, "source": "warranty.pdf", "evidence": "tyres, inner tubes"}
+{"id": "q29", "question": "Do you sell gift cards?", "answerable": false, "kind": "near"}
+{"id": "q30", "question": "Can I pay for a bike in monthly instalments?", "answerable": false, "kind": "near"}
+{"id": "q31", "question": "Do you offer a student discount?", "answerable": false, "kind": "near"}
+{"id": "q32", "question": "How much does the Quillbrook Explorer 2 cost?", "answerable": false, "kind": "near"}
+{"id": "q33", "question": "Do you rent bikes out for the day?", "answerable": false, "kind": "near"}
+{"id": "q34", "question": "Can I trade in my old bike against a new one?", "answerable": false, "kind": "near"}
+{"id": "q35", "question": "Is there a group ride from the shop on Saturdays?", "answerable": false, "kind": "near"}
+{"id": "q36", "question": "Can you fit a bike rack to my car?", "answerable": false, "kind": "near"}
+{"id": "q37", "question": "Which e-bike brands do you sell?", "answerable": false, "kind": "near"}
+{"id": "q38", "question": "Can I bring my dog into the shop?", "answerable": false, "kind": "near"}
+{"id": "q39", "question": "Do you offer a professional bike fitting?", "answerable": false, "kind": "near"}
+{"id": "q40", "question": "What is the shop's phone number?", "answerable": false, "kind": "near"}
+{"id": "q41", "question": "Who won the 2018 Tour de France?", "answerable": false, "kind": "near"}
+{"id": "q42", "question": "What is the capital of Australia?", "answerable": false, "kind": "far"}
+{"id": "q43", "question": "How do I bake sourdough bread?", "answerable": false, "kind": "far"}
+{"id": "q44", "question": "What will the weather be like tomorrow?", "answerable": false, "kind": "far"}
+{"id": "q45", "question": "How do I reset my wifi router?", "answerable": false, "kind": "far"}
+{"id": "q46", "question": "Explain how photosynthesis works.", "answerable": false, "kind": "far"}
+{"id": "q47", "question": "What is the square root of 144?", "answerable": false, "kind": "far"}
