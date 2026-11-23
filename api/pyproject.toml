@@ -1,0 +1,41 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "grounded"
+version = "0.1.0"
+description = "Answers from your documents: every sentence cited, every citation checked, and a refusal when the documents don't cover the question."
+
+requires-python = ">=3.12"
+license = "MIT"
+authors = [{ name = "Mohsin Ali" }]
+dependencies = [
+  "fastapi>=0.115",
+  "uvicorn[standard]>=0.32",
+  "pydantic>=2.9",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "httpx>=0.27", "ruff>=0.6", "mypy>=1.13"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["grounded"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+src = ["grounded", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["grounded"]
+
+[tool.mypy]
+strict = true
+packages = ["grounded"]
