@@ -1,0 +1,28 @@
+{"id": "q01", "question": "How long do I have to return something?", "relevant": ["returns.md"]}
+{"id": "q02", "question": "How long does a refund take to reach my card?", "relevant": ["returns.md"]}
+{"id": "q03", "question": "Can I return something I bought in a sale?", "relevant": ["returns.md"]}
+{"id": "q04", "question": "Do I get my money back for a sale item?", "relevant": ["returns.md"]}
+{"id": "q05", "question": "Can I return a bike I've ridden 30 km?", "relevant": ["returns.md"]}
+{"id": "q06", "question": "Can I return a helmet I've worn?", "relevant": ["returns.md"]}
+{"id": "q07", "question": "Can I return a wheel that was built to order for me?", "relevant": ["returns.md"]}
+{"id": "q08", "question": "Do you deliver to the Scottish Highlands?", "relevant": ["shipping.md"]}
+{"id": "q09", "question": "How much is standard delivery?", "relevant": ["shipping.md"]}
+{"id": "q10", "question": "When is delivery free?", "relevant": ["shipping.md"]}
+{"id": "q11", "question": "What time do I have to order by for next-day delivery?", "relevant": ["shipping.md"]}
+{"id": "q12", "question": "How assembled is a bike when it arrives?", "relevant": ["shipping.md"]}
+{"id": "q13", "question": "How long do you keep a click and collect order?", "relevant": ["shipping.md"]}
+{"id": "q14", "question": "How much is a basic service?", "relevant": ["repairs.md"]}
+{"id": "q15", "question": "What does a full service include?", "relevant": ["repairs.md"]}
+{"id": "q16", "question": "How long does a puncture repair take?", "relevant": ["repairs.md"]}
+{"id": "q17", "question": "How long will a service take in April?", "relevant": ["repairs.md"]}
+{"id": "q18", "question": "Do you repair e-bike motors?", "relevant": ["repairs.md"]}
+{"id": "q19", "question": "What are your opening hours on Sunday?", "relevant": ["store.md"]}
+{"id": "q20", "question": "Is there parking at the shop?", "relevant": ["store.md"]}
+{"id": "q21", "question": "What do I need to bring for a test ride?", "relevant": ["store.md"]}
+{"id": "q22", "question": "Does the membership discount apply to bikes?", "relevant": ["membership.md"]}
+{"id": "q23", "question": "Can I get a refund if I cancel my membership?", "relevant": ["membership.md"]}
+{"id": "q24", "question": "How long is the frame warranty?", "relevant": ["warranty.txt"]}
+{"id": "q25", "question": "How long are carbon frames covered for?", "relevant": ["warranty.txt"]}
+{"id": "q26", "question": "How long is the warranty on parts like gears and brakes?", "relevant": ["warranty.txt"]}
+{"id": "q27", "question": "What happens if my e-bike battery stops holding its charge?", "relevant": ["warranty.txt"]}
+{"id": "q28", "question": "Are tyres covered by the warranty?", "relevant": ["warranty.txt"]}

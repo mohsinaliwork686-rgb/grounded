@@ -1,0 +1,16 @@
+# ragsweep (week 2) on grounded's demo set, to check the chunking and retrieval it starts from.
+# Corpus and labels are written by export.py.
+
+corpus = "./corpus"
+labels = "./labels.jsonl"
+
+retrievers  = ["bm25", "dense", "hybrid"]
+strategies  = ["fixed", "sentence", "recursive"]
+chunk_sizes = [256, 512]
+overlaps    = [0, 64]
+
+models = ["sentence-transformers/all-MiniLM-L6-v2"]
+
+k = [1, 3, 5]
+
+cache = "../../.cache/ragsweep"

@@ -81,6 +81,11 @@ ones wrongly answered at each threshold. The threshold that keeps wrongly answer
 questions near zero, at an acceptable cost in refusals, is the default, and the chart goes in the
 README. The same labelled questions check retrieval.
 
+*The selection rule, written on Wednesday 25 November before the first run:* each unanswerable
+question let through costs 2 and each answerable question refused costs 1, because a confident
+wrong answer is worse than a refusal. The threshold is the middle of the widest run of thresholds
+(in steps of 0.01) with the lowest total cost, which leaves the most room on both sides.
+
 A second layer: the prompt tells Claude to say the documents don't cover it if the passages don't
 answer the question, which catches questions that retrieve something related but not the answer.
 The verifier catches what slips through both.
@@ -117,6 +122,15 @@ answers on different runs, and asks the same model to mark its own work. A local
 deterministic and independent. The entailment threshold is measured on a labelled set of
 sentence and passage pairs: supported sentences, invented ones, ones that change a number or a
 condition, and paraphrases. Its accuracy goes in the README, including where it fails.
+
+*The selection rule, written on Wednesday 25 November before the first run:* the same as for
+refusal. Marking an unsupported sentence as supported costs 2 (that is the failure the verifier
+exists to catch) and flagging a supported sentence costs 1. The entailment threshold is the middle
+of the widest run of lowest-cost thresholds, in steps of 0.01. The premise is the whole cited
+passage, not only the cited span, so a sentence that needs two clauses of the passage can still be
+supported. The connective-sentence exemption is deliberately narrow: an uncited sentence is exempt
+only if it ends with a colon or is at most eight words, has no digits, and starts with a lead-in
+("Here", "In short", "According to", "Based on").
 
 ### 4d. Chunking, embeddings and storage
 
@@ -192,6 +206,10 @@ something to catch.
 - **Thursday:** the web page; `docker compose up` working end to end.
 - **Friday:** the end-to-end test, the README with the demo GIF and both charts, publish, the
   weekly updates.
+
+*Rescheduled on Wednesday 25 November:* Tuesday was missed, so Tuesday's and Wednesday's work both
+happen on Wednesday, in the order above. Monday's web and compose skeleton moves to Thursday with
+the page it belongs to. Nothing is cut and Friday's publish stays.
 
 ## 10. Risks
 
