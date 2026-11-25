@@ -109,4 +109,7 @@ figure; the per-kind table is the useful part.
 ### Claude end to end
 
 `answers.py` sends every question retrieval lets through to Claude at effort `low` and `medium`
-and verifies the answers. Not run yet: it needs an API key.
+and verifies the answers. **Not measured:** it needs a paid Anthropic API key, and this project is
+built and tested without one. Effort is set to `low` explicitly (Claude Opus 5.5 would otherwise
+use `medium`) as the starting point for short question answering, not as a measured choice. The
+script is here for anyone with a key to run.

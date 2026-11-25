@@ -69,9 +69,11 @@ class ClaudeAnswerer:
     """Claude Opus 5.5 with native citations, streamed.
 
     Effort is set explicitly (Opus 5.5 defaults to medium): this is short question answering,
-    so it starts at low and is measured. The server-side ``fallbacks`` option is on, so if the
-    model's safety classifiers decline a request it is retried on a fallback model instead of
-    failing; the final model is reported in ``Finished``.
+    so it starts at low. That choice isn't measured; ``eval/answers.py`` measures it with a key.
+
+    The server-side ``fallbacks`` option is on, so if the model's safety classifiers decline a
+    request it is retried on a fallback model instead of failing; the final model is reported
+    in ``Finished``.
     """
 
     def __init__(

@@ -102,7 +102,10 @@ and its location in the passage. That is more reliable than asking the model to 
 and parsing them, and it means the verifier gets the exact text the model says it relied on.
 
 Model: **Claude Opus 5.5** (`claude-opus-5-5`), streamed. Effort set explicitly and measured on the
-labelled questions (start at `low`, since this is short-form Q&A). The server-side `fallbacks`
+labelled questions (start at `low`, since this is short-form Q&A).
+*(25 November: not measured. It needs a paid API key, which this project doesn't use; the default
+stays at `low`, unmeasured, and the README says so. `eval/answers.py` runs the measurement for
+anyone with a key.)* The server-side `fallbacks`
 option is on, so a refusal by the model's safety classifiers falls back instead of failing. The
 model is configuration, not code.
 
