@@ -26,6 +26,16 @@ jobs:
       - run: ruff format --check .
       - run: mypy
 
+  promptlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install "git+https://github.com/mohsinaliwork686-rgb/promptlint@v0.1.0"
+      - run: promptlint --format github grounded/prompts
+
   test:
     runs-on: ubuntu-latest
     strategy:

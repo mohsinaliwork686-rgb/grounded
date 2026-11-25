@@ -1,0 +1,22 @@
+# docker compose up -d db      PostgreSQL with pgvector, for `grounded ingest` and the API
+# The API and web services are added with the page (Thursday).
+
+services:
+  db:
+    image: pgvector/pgvector:pg17
+    environment:
+      POSTGRES_USER: grounded
+      POSTGRES_PASSWORD: grounded
+      POSTGRES_DB: grounded
+    ports:
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - grounded-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U grounded -d grounded"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+
+volumes:
+  grounded-db:
