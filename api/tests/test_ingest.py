@@ -9,6 +9,7 @@ from grounded.ingest import (
     chunk_markdown,
     chunk_pdf_pages,
     find_documents,
+    join_hyphenated_lines,
     markdown_sections,
     pack,
     read_document,
@@ -155,6 +156,27 @@ def test_the_demo_pdf_keeps_pages_and_sections(demo_docs: Path) -> None:
     assert carbon.page == 1 and carbon.heading_path == ("Frames",)
     claim = next(p for p in document.passages if "inspect it within 3 working days" in p.text)
     assert claim.page == 2 and claim.heading_path == ("Making a claim",)
+
+
+@pytest.mark.parametrize(
+    ("text", "joined"),
+    [
+        ("materials and workman-\nship.", "materials and workmanship."),
+        ("workman- \n  ship", "workmanship"),
+        ("a well-known shop", "a well-known shop"),
+        ("Section 3 -\nParts", "Section 3 -\nParts"),
+        ("Carbon-\nFrames", "Carbon-\nFrames"),
+        ("ends with a dash-\n", "ends with a dash-\n"),
+    ],
+)
+def test_words_split_across_pdf_lines_are_joined(text: str, joined: str) -> None:
+    assert join_hyphenated_lines(text) == joined
+
+
+def test_the_demo_pdf_has_no_word_split_by_a_line_break(demo_docs: Path) -> None:
+    document = read_document(demo_docs / "warranty.pdf", demo_docs)
+    frames = next(p for p in document.passages if "materials and" in p.text)
+    assert "workmanship" in frames.text
 
 
 def test_every_demo_passage_can_be_traced_to_its_source(demo_docs: Path) -> None:

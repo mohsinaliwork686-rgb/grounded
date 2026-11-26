@@ -250,6 +250,20 @@ def chunk_pdf_pages(pages: list[str], size: int = DEFAULT_CHUNK_SIZE) -> list[Pa
     return passages
 
 
+# A word broken across two lines with a hyphen ("workman-\nship"), as typesetting does.
+_LINE_HYPHEN = re.compile(r"(?<=[a-z])-[ \t]*\n[ \t]*(?=[a-z])")
+
+
+def join_hyphenated_lines(text: str) -> str:
+    """Join words that the PDF's typesetting split across lines with a hyphen.
+
+    Only a lowercase letter, a hyphen at the end of a line and a lowercase letter at the start of
+    the next are joined. A compound that happens to break at its own hyphen ("well-\nknown")
+    loses the hyphen too; that is rarer than a typeset break, and the text still reads.
+    """
+    return _LINE_HYPHEN.sub("", text)
+
+
 def read_pdf_pages(path: Path) -> tuple[list[str], str | None]:
     """The text of every page, and the title from the PDF's metadata if it has one."""
     try:
@@ -259,7 +273,7 @@ def read_pdf_pages(path: Path) -> tuple[list[str], str | None]:
         raise IngestError("reading PDFs needs pypdf") from error
     try:
         reader = PdfReader(path)
-        pages = [page.extract_text() or "" for page in reader.pages]
+        pages = [join_hyphenated_lines(page.extract_text() or "") for page in reader.pages]
     except (PdfReadError, OSError, ValueError) as error:
         raise IngestError(f"{path}: not a readable PDF ({error})") from error
     title = reader.metadata.title if reader.metadata and reader.metadata.title else None

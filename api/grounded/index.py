@@ -22,8 +22,12 @@ class IngestReport:
 
 
 def signature(embedder: Embedder, chunk_size: int) -> str:
-    """What the stored vectors depend on besides the file. A change re-indexes every file."""
-    return f"{embedder.name}|sentences-{chunk_size}|headings"
+    """What the stored vectors depend on besides the file. A change re-indexes every file.
+
+    ``pdf-joined``: PDF words split across lines with a hyphen are joined (26 November). Without
+    it in the signature, an index built before that change would keep the split words.
+    """
+    return f"{embedder.name}|sentences-{chunk_size}|headings|pdf-joined"
 
 
 def ingest_folder(
