@@ -1,0 +1,24 @@
+event: retrieval
+data: {"passages": [{"id": 13, "document": "returns.md", "title": "Returns and refunds", "page": null, "heading_path": ["Returns and refunds", "Bikes"], "text": "A bike can be returned within 30 days if it has been ridden less than 50 km. Bikes ridden further\nthan that can't be returned, but they are still covered by the warranty.", "start": 581, "end": 751, "score": 0.7461}, {"id": 22, "document": "store.md", "title": "Visiting the shop", "page": null, "heading_path": ["Visiting the shop", "Test rides"], "text": "You can test ride any bike in stock. Bring a photo ID, and book ahead at weekends.", "start": 289, "end": 371, "score": 0.4639}, {"id": 14, "document": "returns.md", "title": "Returns and refunds", "page": null, "heading_path": ["Returns and refunds", "What can't be returned"], "text": "Helmets that have been worn can't be returned, for hygiene and safety reasons. Custom builds,\nwheels built to order and anything we have cut to size, such as a steerer tube or brake cable,\ncan't be returned either.", "start": 780, "end": 994, "score": 0.4596}, {"id": 29, "document": "warranty.pdf", "title": "Quillbrook Cycles warranty booklet", "page": 2, "heading_path": ["Making a claim"], "text": "Bring the bike and your receipt to the shop. We inspect it within 3 working days and tell you what\nwe can do. You need your receipt for every warranty claim.", "start": 370, "end": 527, "score": 0.449}, {"id": 9, "document": "returns.md", "title": "Returns and refunds", "page": null, "heading_path": ["Returns and refunds"], "text": "Quillbrook Cycles is a made-up bike shop. This handbook was written for the grounded demo.", "start": 23, "end": 113, "score": 0.4339}], "top_score": 0.7461, "threshold": 0.55, "confident": true}
+
+event: text
+data: {"block": 0, "text": "A bike can be returned within 30 days if it has been ridden less than 50 km. Bikes ridden further than that can't be returned, but they are still covered by the warranty.", "citations": [{"passage_id": 13, "cited_text": "A bike can be returned within 30 days if it has been ridden less than 50 km. Bikes ridden further\nthan that can't be returned, but they are still covered by the warranty."}]}
+
+event: text
+data: {"block": 1, "text": " You can test ride any bike in stock. Bring a photo ID, and book ahead at weekends.", "citations": [{"passage_id": 22, "cited_text": "You can test ride any bike in stock. Bring a photo ID, and book ahead at weekends."}]}
+
+event: verdict
+data: {"index": 0, "text": "A bike can be returned within 30 days if it has been ridden less than 50 km.", "verdict": "supported", "entailment": 0.9766, "checks": [{"passage_id": 13, "entailment": 0.9766, "neutral": 0.0201, "contradiction": 0.0033}]}
+
+event: verdict
+data: {"index": 1, "text": "Bikes ridden further than that can't be returned, but they are still covered by the warranty.", "verdict": "supported", "entailment": 0.9943, "checks": [{"passage_id": 13, "entailment": 0.9943, "neutral": 0.0049, "contradiction": 0.0008}]}
+
+event: verdict
+data: {"index": 2, "text": "You can test ride any bike in stock.", "verdict": "supported", "entailment": 0.9948, "checks": [{"passage_id": 22, "entailment": 0.9948, "neutral": 0.0049, "contradiction": 0.0003}]}
+
+event: verdict
+data: {"index": 3, "text": "Bring a photo ID, and book ahead at weekends.", "verdict": "supported", "entailment": 0.9919, "checks": [{"passage_id": 22, "entailment": 0.9919, "neutral": 0.0071, "contradiction": 0.001}]}
+
+event: done
+data: {"model": "extractive", "timings": {"retrieval_ms": 141.9, "generation_ms": 1.6, "verification_ms": 1491.4, "total_ms": 1636.6}, "input_tokens": null, "output_tokens": null}
+
