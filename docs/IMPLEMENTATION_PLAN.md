@@ -214,6 +214,14 @@ something to catch.
 happen on Wednesday, in the order above. Monday's web and compose skeleton moves to Thursday with
 the page it belongs to. Nothing is cut and Friday's publish stays.
 
+*Thursday 26 November, as built:* the page is Next.js with plain CSS, one route and a server-side
+proxy (`/api/ask`) that streams the API's events through, so the browser only talks to its own
+origin. The API image pins the model libraries to the versions the thresholds were measured with
+and downloads both local models at build time, so it answers offline. `docker compose up --build`
+starts PostgreSQL, the API (which indexes `demo/docs`, or any folder you mount) and the page.
+Checked end to end without a key; with a key it uses the same request the unit tests check, but no
+paid call was made.
+
 ## 10. Risks
 
 | Risk | What I'll do |

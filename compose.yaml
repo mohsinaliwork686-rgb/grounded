@@ -1,5 +1,11 @@
-# docker compose up -d db      PostgreSQL with pgvector, for `grounded ingest` and the API
-# The API and web services are added with the page (Thursday).
+# docker compose up --build       the whole app on http://localhost:3000
+#
+# Without ANTHROPIC_API_KEY the answers are extractive (sentences from the top passages);
+# retrieval, refusal and the verifier work the same. With a key in your shell, Claude answers:
+#   ANTHROPIC_API_KEY=... docker compose up --build
+# Your own documents instead of the demo handbook:
+#   GROUNDED_DOCS_DIR=/path/to/docs docker compose up --build
+# Removed files stay in the index; `docker compose down -v` starts from an empty one.
 
 services:
   db:
@@ -17,6 +23,29 @@ services:
       interval: 2s
       timeout: 3s
       retries: 30
+
+  api:
+    build: ./api
+    environment:
+      GROUNDED_DATABASE_URL: postgresql://grounded:grounded@db:5432/grounded
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+    volumes:
+      - ${GROUNDED_DOCS_DIR:-./demo/docs}:/docs:ro
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    build: ./web
+    environment:
+      API_URL: http://api:8000
+    ports:
+      - "127.0.0.1:3000:3000"
+    depends_on:
+      api:
+        condition: service_healthy
 
 volumes:
   grounded-db:

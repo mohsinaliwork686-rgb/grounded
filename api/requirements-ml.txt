@@ -1,0 +1,11 @@
+# The model libraries in the Docker image, pinned to the versions the refusal threshold and
+# the verifier threshold were measured with (eval/README.md), so the image gives the same scores.
+# torch comes from PyTorch's CPU-only index in the Dockerfile; this file pins the rest.
+torch==2.2.2
+numpy==1.26.4
+transformers==4.49.0
+sentence-transformers==3.4.1
+tokenizers==0.21.4
+huggingface-hub==0.36.2
+sentencepiece==0.2.0
+protobuf==7.36.2
