@@ -236,10 +236,10 @@ paid call was made.
 
 ## 11. Definition of done
 
-- [ ] Public repo, description and topics
-- [ ] This plan, committed before the code
-- [ ] README: the problem first, a demo GIF that shows a refusal, how to run it, the refusal and
+- [x] Public repo, description and topics
+- [x] This plan, committed before the code
+- [x] README: the problem first, a demo GIF that shows a refusal, how to run it, the refusal and
       verifier measurements, and what it doesn't promise
-- [ ] Every row of the test plan covered
-- [ ] CI green: lint, types, the API tests against real PostgreSQL, the web tests, promptlint
-- [ ] `docker compose up` works, with and without an Anthropic key
+- [x] Every row of the test plan covered
+- [x] CI green: lint, types, the API tests against real PostgreSQL, the web tests, promptlint
+- [x] `docker compose up` works, with and without an Anthropic key
