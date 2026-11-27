@@ -108,8 +108,27 @@ figure; the per-kind table is the useful part.
 
 ### Claude end to end
 
-`answers.py` sends every question retrieval lets through to Claude at effort `low` and `medium`
-and verifies the answers. **Not measured:** it needs a paid Anthropic API key, and this project is
-built and tested without one. Effort is set to `low` explicitly (Claude Opus 5.5 would otherwise
-use `medium`) as the starting point for short question answering, not as a measured choice. The
-script is here for anyone with a key to run.
+Measured on 26 November with `answers.py` and a personal API key: Claude Opus 5.5 answered every
+question retrieval let through, at effort `low` and then `medium`, and the verifier checked each
+sentence. About $1 in all. Full answers and verdicts are in `results/answers.json`.
+
+| effort | questions answered | sentences | supported | flagged | no citation | output tokens | seconds |
+|--------|-------------------:|----------:|----------:|--------:|------------:|--------------:|--------:|
+| low    | 26 | 52 | 43 | 7 | 2 | 97  | 1.97 |
+| medium | 26 | 52 | 44 | 8 | 0 | 130 | 1.87 |
+
+Every request also sends about 1,725 input tokens (the instructions and five passages), so medium
+costs roughly a third more output for the same wait. **grounded uses `medium`**: it cited every
+sentence, and an uncited sentence is the one thing grounded promises not to show unmarked. Two
+uncited sentences in one answer is a small sample, so treat this as a sensible default, not a
+proven rule.
+
+None of the 19 unanswerable questions reached Claude (retrieval refused them all), and Claude
+declined none of the 26 answerable ones.
+
+**Every flagged sentence was true.** I read all 15 against the handbook. They are near-copies
+("Yes, items bought in a sale can be returned within 14 days instead of 30."), small inferences
+("so 30 km is within the limit") or two facts joined from two passages. So on this run Claude
+stated nothing false, and the verifier flagged about 1 correct sentence in 7, more than the 2 in 26
+it flagged on the hand-written pairs. In grounded a flag means "check this sentence", not "this is
+wrong", and this is the measured reason why.

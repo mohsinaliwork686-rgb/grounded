@@ -22,7 +22,8 @@ from grounded.store import StoredPassage
 from grounded.verify import Citation
 
 DEFAULT_MODEL = "claude-opus-5-5"
-DEFAULT_EFFORT = "low"
+# Measured on 26 Nov 2026 by eval/answers.py: medium cited every sentence, low left 2 of 52 uncited.
+DEFAULT_EFFORT = "medium"
 REFUSAL_SENTENCE = "Your documents don't cover this."
 SYSTEM_PROMPT = files("grounded").joinpath("prompts/answer.md").read_text(encoding="utf-8")
 
@@ -68,8 +69,9 @@ def document_title(passage: StoredPassage) -> str:
 class ClaudeAnswerer:
     """Claude Opus 5.5 with native citations, streamed.
 
-    Effort is set explicitly (Opus 5.5 defaults to medium): this is short question answering,
-    so it starts at low. That choice isn't measured; ``eval/answers.py`` measures it with a key.
+    Effort is set explicitly, to medium. ``eval/answers.py`` compared low and medium on the
+    labelled questions: medium cited every sentence for about a third more output tokens and the
+    same time per answer, while low left two sentences uncited (eval/README.md).
 
     The server-side ``fallbacks`` option is on, so if the model's safety classifiers decline a
     request it is retried on a fallback model instead of failing; the final model is reported

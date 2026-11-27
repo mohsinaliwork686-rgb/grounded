@@ -77,7 +77,7 @@ def delta(index: int, **delta_fields: Any) -> SimpleNamespace:
 def test_the_request_sends_each_passage_as_a_cited_document() -> None:
     request = ClaudeAnswerer().request("How long are frames covered?", PASSAGES)
     assert request["model"] == "claude-opus-5-5"
-    assert request["output_config"] == {"effort": "low"}
+    assert request["output_config"] == {"effort": "medium"}
     assert request["fallbacks"] == "default"
     assert request["betas"] == ["server-side-fallback-2026-07-01"]
     assert request["system"] == SYSTEM_PROMPT and REFUSAL_SENTENCE in SYSTEM_PROMPT

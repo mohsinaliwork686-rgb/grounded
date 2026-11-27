@@ -105,7 +105,9 @@ Model: **Claude Opus 5.5** (`claude-opus-5-5`), streamed. Effort set explicitly 
 labelled questions (start at `low`, since this is short-form Q&A).
 *(25 November: not measured. It needs a paid API key, which this project doesn't use; the default
 stays at `low`, unmeasured, and the README says so. `eval/answers.py` runs the measurement for
-anyone with a key.)* The server-side `fallbacks`
+anyone with a key.)* *(26 November: measured after all, with a personal key, on the 26 answerable questions
+that retrieval lets through: low left 2 of 52 sentences uncited, medium cited all of them, for 130
+output tokens per answer instead of 97 and the same time. The default is now medium.)* The server-side `fallbacks`
 option is on, so a refusal by the model's safety classifiers falls back instead of failing. The
 model is configuration, not code.
 
